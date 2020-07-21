@@ -72,24 +72,48 @@ class Game extends Component {
       computerChoice: compChoice,
     });
   };
-
+  displayIcon = (choice) => {
+    if (choice === "rock") {
+      return <i className="fas fa-hand-rock fa-3x"></i>;
+    } else if (choice === "paper") {
+      return <i className="fas fa-hand-paper fa-3x"></i>;
+    } else {
+      return <i className="fas fa-hand-scissors fa-3x"></i>;
+    }
+  };
   render() {
     return (
-      <div>
-        <button onClick={this.chooseRock}>
-          <i className="fas fa-hand-rock fa-10x"></i>
-        </button>
-        <button onClick={this.choosePaper}>
-          <i className="fas fa-hand-paper fa-10x"></i>
-        </button>
-        <button onClick={this.chooseScissors}>
-          <i className="fas fa-hand-scissors fa-10x"></i>
-        </button>
-        <div>
-          <h1>Players choice: {this.state.playerChoice}</h1>
-          <h1>Computer choice :{this.state.computerChoice}</h1>
-          <h2>Result: {this.state.result}</h2>
+      <div className="container">
+        <h1>Rock Paper Scissors</h1>
+        <div className="icon-hands">
+          <button onClick={this.chooseRock}>
+            <i className="fas fa-hand-rock fa-10x"></i>
+          </button>
+          <button onClick={this.choosePaper}>
+            <i className="fas fa-hand-paper fa-10x"></i>
+          </button>
+          <button onClick={this.chooseScissors}>
+            <i className="fas fa-hand-scissors fa-10x"></i>
+          </button>
         </div>
+
+        {this.state.result ? (
+          <div>
+            <div className="choices">
+              <h1>
+                Players choice: {this.displayIcon(this.state.playerChoice)}
+              </h1>
+              <h1>
+                Computers choice :{this.displayIcon(this.state.computerChoice)}
+              </h1>
+            </div>
+            <div>
+              <h2>Result: {this.state.result}</h2>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     );
   }
