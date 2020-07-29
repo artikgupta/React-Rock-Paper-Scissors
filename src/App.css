@@ -2,11 +2,21 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  align-items: center;
+}
+.btns i {
+  font-size: 8rem;
 }
 .container {
   width: 100vw;
   height: 100vh;
+  background-color: #61c9a8;
+  padding: 1rem;
+}
+h1.option {
+  color: #a53860;
+}
+h1.option-2 {
+  color: #4c3b4d;
 }
 h1 {
   text-align: center;
@@ -14,18 +24,58 @@ h1 {
 .icon-hands {
   display: flex;
   justify-content: space-evenly;
-  width: 30rem;
-  height: 12rem;
-  margin: 0 auto;
+  /* border: 1px solid red; */
 }
 .choices {
   display: flex;
-  /* width: 20rem; */
-  /* height: 5rem; */
   align-items: center;
+  margin: 1rem auto;
+  padding: 1rem 7rem;
   justify-content: space-between;
-  border: 1px solid red;
+  /* border: 1px solid green; */
+}
+.btns {
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+
+h2 {
+  text-align: center;
+  margin: 4rem;
 }
 .result {
-  border: 1px solid blue;
+  color: blue;
+}
+.winner {
+  color: red;
+}
+@media only screen and (max-width: 800px) {
+  * {
+    font-size: 16px;
+    margin: auto;
+  }
+  .btns i {
+    font-size: 50px;
+  }
+  .choices {
+    font-size: 10px;
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    margin: 15px auto;
+    padding: 1rem 1rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  * {
+    font-size: 10px;
+    /* margin: auto; */
+  }
+  .choices {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+  }
 }

@@ -84,31 +84,35 @@ class Game extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Rock Paper Scissors</h1>
+        <h1 className="option">Rock Paper Scissors</h1>
+        <h1 className="option-2">Please select an option</h1>
         <div className="icon-hands">
-          <button onClick={this.chooseRock}>
-            <i className="fas fa-hand-rock fa-10x"></i>
+          <button className="btns" onClick={this.chooseRock}>
+            <i className="fas fa-hand-rock "></i>
           </button>
-          <button onClick={this.choosePaper}>
-            <i className="fas fa-hand-paper fa-10x"></i>
+          <button className="btns" onClick={this.choosePaper}>
+            <i className="fas fa-hand-paper "></i>
           </button>
-          <button onClick={this.chooseScissors}>
-            <i className="fas fa-hand-scissors fa-10x"></i>
+          <button className="btns" onClick={this.chooseScissors}>
+            <i className="fas fa-hand-scissors "></i>
           </button>
         </div>
 
         {this.state.result ? (
-          <div>
+          <div className="choice-container">
             <div className="choices">
               <h1>
-                Players choice: {this.displayIcon(this.state.playerChoice)}
+                Player's choice: {this.displayIcon(this.state.playerChoice)}
               </h1>
               <h1>
-                Computers choice :{this.displayIcon(this.state.computerChoice)}
+                Computer's choice :{this.displayIcon(this.state.computerChoice)}
               </h1>
             </div>
             <div>
-              <h2>Result: {this.state.result}</h2>
+              <h2>
+                <span className="result">Result:</span>
+                <span className="winner">{this.state.result}</span>
+              </h2>
             </div>
           </div>
         ) : (
